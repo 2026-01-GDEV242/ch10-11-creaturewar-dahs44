@@ -1,3 +1,4 @@
+import java.util.Random;
 
 /**
  * Abstract class Creature - 
@@ -40,7 +41,7 @@ public abstract class Creature
      */
     public int attack(){
         // TODO: implement a damage method
-        return 0;
+        return Randomizer.nextInt(str);
     }
     
     
@@ -50,8 +51,8 @@ public abstract class Creature
      */
     public boolean isAlive() {
         // TODO: implement a method to report if the creature yet lives
-        return false; //change this
-    }
+          return (hp > 0);
+        }
     
     /**
      * Is this creature knockedOut?
@@ -59,7 +60,7 @@ public abstract class Creature
      */
     public boolean isKnockedOut() {
         //TODO: implement a method to report if the creature has been killed
-        return false; //change this
+        return (hp <= 0); //change this
     }
     
     
@@ -69,7 +70,7 @@ public abstract class Creature
      * @param damage value to remove from hit point count
      */
     public void takeDamage(int damage) {
-        // TODO: implement this
+        hp = hp - damage;
     }
     
 }
